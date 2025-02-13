@@ -1,4 +1,3 @@
-import React from "react";
 import { FBUserChat } from "../../utilis/types";
 import chatStore from "../../store/chatStore";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
@@ -12,7 +11,6 @@ const ChatItem = ({ item }: Props) => {
   const { getChat, chatId } = chatStore();
   const { user } = userStore();
   const handleSelect = async () => {
-    console.log("function called");
     if (chatId !== item.chatId) {
       getChat(item);
       try {

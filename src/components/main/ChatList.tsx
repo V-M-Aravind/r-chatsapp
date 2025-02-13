@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import ChatItem from "./ChatItem";
 import AddUser from "./AddUser";
 import userStore from "../../store/userStore";

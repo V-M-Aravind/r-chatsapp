@@ -1,13 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import chatStore from "../../store/chatStore";
 import userStore from "../../store/userStore";
-import {
-  arrayRemove,
-  arrayUnion,
-  doc,
-  getDoc,
-  updateDoc,
-} from "firebase/firestore";
+import { arrayRemove, arrayUnion, doc, updateDoc } from "firebase/firestore";
 
 import { db } from "../../lib/firebase";
 import { toast } from "react-toastify";

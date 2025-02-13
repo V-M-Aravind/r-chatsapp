@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import userStore from "./userStore";
-import { ChatListItem, FBUserChat, User } from "../utilis/types";
+import { FBUserChat, User } from "../utilis/types";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../lib/firebase";
 
@@ -45,16 +45,16 @@ const chatStore = create<Props>((set) => ({
       recipientUser = null;
     }
 
-    let chatId = chatItem.chatId;
+    const chatId = chatItem.chatId;
     let isCurrentUserBlocked = false;
     let isReceiverBlocked = false;
-    if (recipientUser?.blockedList.includes(currentUser.userId)) {
+    if ((recipientUser?.blockedList as string[]).includes(currentUser.userId)) {
       recipientUser = null;
       isCurrentUserBlocked = true;
     }
     if (
       recipientUser &&
-      currentUser?.blockedList?.includes(recipientUser?.userId)
+      (currentUser?.blockedList as string[])?.includes(recipientUser?.userId)
     ) {
       isReceiverBlocked = true;
     }

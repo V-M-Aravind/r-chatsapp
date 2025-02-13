@@ -1,5 +1,3 @@
-import React from "react";
-
 const Loader = ({ styles }: { styles?: string }) => {
   return (
     <div
