@@ -1,6 +1,7 @@
 ##TO DO
 
-search users from given chatlist
+code split and optimisation
+firebse functions in single file as reusable functions
 add emoji messaging
 audio video call
 mobile screen
