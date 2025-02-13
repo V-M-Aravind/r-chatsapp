@@ -59,7 +59,7 @@ const SignUp = ({ reDirectToSigin }: Props) => {
       await setDoc(doc(db, "userchats", userId), {
         chats: [],
       });
-      toast("Registration Successfull. Please login", { type: "success" });
+      toast("Registration Successfull.", { type: "success" });
       reDirectToSigin();
     } catch (error) {
       console.log(error);
