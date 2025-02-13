@@ -21,7 +21,6 @@ const SignIn = () => {
 
       const res = await signInWithEmailAndPassword(auth, email, password);
       const user = res.user;
-      console.log({ user });
       fetchUserInfo(user.uid);
 
       toast("Logged in successfully.", { type: "success" });

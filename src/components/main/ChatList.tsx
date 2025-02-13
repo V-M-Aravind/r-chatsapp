@@ -21,7 +21,6 @@ const ChatList = () => {
         setChats(data);
       });
     }
-
     return () => {
       user && unsub();
     };
@@ -39,7 +38,7 @@ const ChatList = () => {
     return () => {
       clearTimeout(timeOut);
     };
-  }, [searchUser]);
+  }, [chats, searchUser]);
 
   return (
     <div className="flex flex-col flex-1 h-5/6">

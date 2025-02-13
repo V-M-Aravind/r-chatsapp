@@ -31,7 +31,6 @@ const ChatContainer = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [loading, setLoading] = useState(false);
   const [isFirstTime, setIsFirstTime] = useState(true);
-  console.log({ isFirstTime });
 
   useEffect(() => {
     setIsFirstTime(true);
@@ -43,7 +42,6 @@ const ChatContainer = () => {
       setLoading(true);
       unsub = onSnapshot(doc(db, "chats", chatId), (doc) => {
         const data = doc.data();
-        console.log("chat value changed");
         setChats(data?.chats as ChatMessage[]);
         if (
           data?.blockedList.includes(

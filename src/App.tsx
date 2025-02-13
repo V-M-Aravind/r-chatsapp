@@ -31,7 +31,7 @@ function App() {
       {user ? <MainPage /> : <LoginPage />}
       <ToastContainer position="bottom-right" />
       <footer className="my-2 py-4 bg-white rounded-md px-4 text-center font-bold text-sm">
-        R-Chatsapp 2025. All right reserved to VM Aravind
+        ©2025 R-Chatsapp. All right reserved to VM Aravind
       </footer>
     </div>
   );

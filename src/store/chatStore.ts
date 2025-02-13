@@ -32,7 +32,6 @@ const chatStore = create<Props>((set) => ({
     }));
   },
   getChat: async (chatItem: FBUserChat) => {
-    console.log({ chatItem });
     const currentUser = userStore.getState().user as User;
     //make the userchat to have seen the message updation here
     //get the recipient user details

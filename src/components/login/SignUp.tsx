@@ -39,7 +39,6 @@ const SignUp = ({ reDirectToSigin }: Props) => {
       const confirmPassword = (
         form.elements.namedItem("retype_password") as HTMLInputElement
       )?.value;
-      console.log({ email, password, confirmPassword });
       if (password.localeCompare(confirmPassword) !== 0) {
         toast("Password doesn't match.", { type: "error" });
         return;
