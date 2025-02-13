@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import userStore from "../../store/userStore";
 import MyAccountDetails from "./MyAccountDetails";
 import chatStore from "../../store/chatStore";

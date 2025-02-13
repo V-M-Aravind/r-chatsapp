@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import userStore from "../../store/userStore";
 import { User } from "../../utilis/types";
 import {
@@ -22,11 +22,15 @@ const AddUser = ({ onClose }: Props) => {
   const { user } = userStore();
   const [searchUser, setSearchUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(false);
-  const searchUserHandler = async (e) => {
+  const searchUserHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     setSearchUser(null);
     setLoading(true);
     e.preventDefault();
-    const searchTerm = e.target.elements.namedItem("searchTerm").value;
+    const searchTerm = (
+      (e.target as HTMLFormElement)?.elements.namedItem(
+        "searchTerm"
+      ) as HTMLInputElement
+    ).value;
     try {
       const usersRef = collection(db, "users");
 
@@ -40,6 +44,7 @@ const AddUser = ({ onClose }: Props) => {
         toast("User doesn't exist", { type: "error" });
       }
     } catch (error) {
+      // @ts-ignore
       toast(error?.message, { type: "error" });
     } finally {
       setLoading(false);
@@ -110,7 +115,9 @@ const AddUser = ({ onClose }: Props) => {
               <div className="flex mt-4 gap-3 items-center border-b-2 pb-2">
                 <img
                   src={
-                    searchUser?.blockedList?.includes(user?.userId)
+                    (searchUser?.blockedList as string[])?.includes(
+                      user?.userId as string
+                    )
                       ? "/blocked.png"
                       : searchUser?.profilePic
                   }

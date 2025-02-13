@@ -1,5 +1,3 @@
-import React from "react";
-
 const LoaderScreen = () => {
   return (
     <div className="w-full h-full flex justify-center items-center opacity-70 absolute top-0 left-0 z-30">

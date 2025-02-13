@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import userStore from "../../store/userStore";
 import { toast } from "react-toastify";
 import Overlay from "../common/Overlay";
@@ -25,9 +25,10 @@ const SignIn = () => {
       fetchUserInfo(user.uid);
 
       toast("Logged in successfully.", { type: "success" });
-    } catch (error: Error) {
+    } catch (error) {
       console.log(error);
-      toast(error.message, { type: "error" });
+      // @ts-ignore
+      toast(error?.message, { type: "error" });
     } finally {
       setIsLoading(false);
     }

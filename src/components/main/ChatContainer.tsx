@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import chatStore from "../../store/chatStore";
 import { ChatMessage, FBUserChat } from "../../utilis/types";
 import userStore from "../../store/userStore";
@@ -13,7 +13,7 @@ import { db } from "../../lib/firebase";
 import { toast } from "react-toastify";
 import { formatTimestamp } from "../../utilis/utils";
 
-const chatLimit = 10;
+//const chatLimit = 10;
 
 const ChatContainer = () => {
   const {
@@ -113,6 +113,7 @@ const ChatContainer = () => {
         chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
       }, 100);
     } catch (error) {
+      // @ts-ignore
       toast(error?.message, { type: "error" });
     }
   };

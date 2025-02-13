@@ -1,4 +1,3 @@
-import React from "react";
 import MyAccount from "./MyAccount";
 import ChatList from "./ChatList";
 import ChatContainer from "./ChatContainer";

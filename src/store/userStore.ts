@@ -30,6 +30,7 @@ const userStore = create<Store>((set) => ({
         throw Error("User doesn't exist");
       }
     } catch (error) {
+      // @ts-ignore
       throw Error(error.message);
     } finally {
       set((state) => ({ ...state, isLoading: false }));

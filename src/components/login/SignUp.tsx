@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { toast } from "react-toastify";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
@@ -63,6 +63,7 @@ const SignUp = ({ reDirectToSigin }: Props) => {
       reDirectToSigin();
     } catch (error) {
       console.log(error);
+      // @ts-ignore
       toast(error?.message, { type: "error" });
     } finally {
       setIsLoading(false);
