@@ -139,7 +139,7 @@ const ChatContainer = () => {
             {chats?.map((chat) => (
               <li
                 key={chat.createdAt}
-                className={`max-w-1/3 h-auto m-2 mt-5 p-2 px-3 text-left rounded-lg relative ${
+                className={`max-w-1/3 min-w-24 h-auto m-2 mt-5 p-2 px-3 text-left rounded-lg relative ${
                   chat.user === user?.userId
                     ? "ml-auto bg-sky-300"
                     : "mr-auto bg-slate-200"
